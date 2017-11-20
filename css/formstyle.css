@@ -1,0 +1,45 @@
+body{
+
+  margin-top: 5px !important;
+  background: url("../img/background.jpg") no-repeat center center fixed;
+  background-size: cover;
+  min-height: 770px;
+  color: white;
+
+
+}
+
+.bg-overlay{
+
+  background:rgba(0,0,0, 0.7);
+  min-height: 770px;
+
+}
+
+.registration{
+
+	margin-top: 100px !important;
+}
+
+.login{
+
+	margin-top:100px;
+}
+
+.submit-btn{
+
+	margin-left: 100px !important;
+	margin-right: 200px !important;
+}
+input, textarea, select{
+  
+  width: 100%;
+  resize: vertical;
+  padding: 12px;
+  border: 1px solid;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  color: black;
+}
