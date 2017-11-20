@@ -11,3 +11,5 @@ Bright events enables users to:
 5. Search for events based on event location or event category
 
 [Project's Detail](https://docs.google.com/document/d/185NuVsJ-aflp3tlFksCFgVLLaMbCsdODOCr8Uw_5GSU/edit#)
+
+Visit Bright Event's [Page](https://brandeddavid.github.io/Bright-Events/UI/designs/index.html)
