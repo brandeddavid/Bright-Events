@@ -39,6 +39,14 @@ class Testcreateuser(unittest.TestCase):
 
         self.assertEqual(result, 'Passwords do not match')
 
+    def test_missing_email(self):
+
+        """Tests for missing email address"""
+
+        result = self.user.createUser('dmwangi',' ','dmwangi','dmwangi')
+
+        self.assertEqual(result, 'Fields Required')
+
 class Testloginuser(unittest.TestCase):
 
     """Tests user login method"""
@@ -78,3 +86,7 @@ class Testloginuser(unittest.TestCase):
         result = self.user.login('dkinuthia@gmail.com','dunkin')
 
         self.assertEqual(result, 'You have not signed up for an account')
+
+
+if __name__ == '__main__':
+    unittest.main()
