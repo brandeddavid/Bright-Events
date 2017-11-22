@@ -1,29 +1,12 @@
+{% extends 'baseindex.html' %}
+
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Registration</title>
-	<link rel="stylesheet" type="text/css" href="../static/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="../static/formstyle.css">
+	<title>{% block title %}Home Page{% endblock %}</title>
 </head>
 <body>
-
-	<nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <a class="navbar-brand brand" href="#"><strong>BRIGHT EVENT</strong></a>
-        </div>
-
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="/">Home</a></li>
-            <li><a href="/about">About Us</a></li>
-            <li><a href="/login">Login</a></li>
-            <li><a href="/home">Guest</a></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-
+{% block body %}
     <div class="bg-overlay">
 
     	<div class="container">
@@ -72,6 +55,6 @@
 
     </div>
 
-
+{% endblock %}
 </body>
 </html>

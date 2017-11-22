@@ -1,30 +1,12 @@
+{% extends 'basehome.html' %}
+
 <!DOCTYPE html>
 <html>
 <head>
 	<title>Add Event</title>
-	<link rel="stylesheet" type="text/css" href="../static/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="../static/style.css">
-	<link rel="stylesheet" type="text/css" href="../static/formstyle.css">
 </head>
 <body>
-
-	<nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <a class="navbar-brand brand" href="#"><strong>BRIGHT EVENT</strong></a>
-        </div>
-
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="/home">Home</a></li>
-            <li><a href="/addEvent">Create Event</a></li>
-            <li><a href="/myEvents">My Events</a></li>
-            <li><a href="/">Sign Out</a></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-
+{% block body %}
 	<div class="bg-overlay">
 
 		<div class="container">
@@ -63,6 +45,6 @@
 
 		</div>
 	</div>
-
+{% endbloock %}
 </body>
 </html>
