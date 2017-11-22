@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Add Event</title>
+	<link rel="stylesheet" type="text/css" href="../static/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../static/style.css">
+	<link rel="stylesheet" type="text/css" href="../static/formstyle.css">
+</head>
+<body>
+
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand brand" href="#"><strong>BRIGHT EVENT</strong></a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="/home">Home</a></li>
+            <li><a href="/addEvent">Create Event</a></li>
+            <li><a href="/myEvents">My Events</a></li>
+            <li><a href="/">Sign Out</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+	<div class="bg-overlay">
+
+		<div class="container">
+
+			<div class="row">
+				<div class="col-lg-4">
+
+				</div>
+				<div class="col-lg-4">
+
+					<h1>Event Details</h1>
+
+					<input type="text" name="name" placeholder="Event Name...">
+
+					<select name="category" placeholder="Category" style="color:black;">
+					    <option value="volvo">Category 1</option>
+					    <option value="saab">Category 2</option>
+					    <option value="fiat">Category 3</option>
+					    <option value="audi">Category 4</option>
+					</select>
+
+					<input type="text" name="location" placeholder="Event Location...">
+
+					<input type="date" name="date" Event Date placeholder="Event Date">
+
+					<input type="time" name="time" placeholder="Event Time...">
+
+				    <textarea name="description" placeholder="Add Event Description..." style="height:200px"></textarea>
+
+				    <button class="btn btn-lg btn-success">Add Event</button>
+				</div>
+				<div class="col-lg-4">
+
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+</body>
+</html>

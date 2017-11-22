@@ -6,3 +6,33 @@ from app import app
 def index():
 
     return render_template('index.html')
+
+@app.route('/about')
+
+def about():
+
+    return render_template('about.html')
+
+@app.route('/login')
+
+def login():
+
+    return render_template('login.html')
+
+@app.route('/home')
+
+def home():
+
+    return render_template('home.html')
+
+@app.route('/addEvent')
+
+def addEvent():
+
+    return render_template('addEvent.html')
+
+@app.route('/myEvents')
+
+def myEvents():
+
+    return render_template('myEvents.html')
