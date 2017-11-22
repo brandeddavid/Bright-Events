@@ -16,7 +16,9 @@ class User(object):
 
             if password == confirmpassword:
 
-                details.append(name,password,confirmpassword)
+                details.append(name)
+                details.append(password)
+                details.append(confirmpassword)
 
                 self.users[email] = details
 
