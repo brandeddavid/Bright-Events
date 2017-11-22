@@ -22,6 +22,6 @@ class User(object):
 
             else:
 
-                return "Passwords don't match"
+                return "Passwords do not match"
 
         return 'Registration Successful'
