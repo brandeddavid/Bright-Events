@@ -25,3 +25,16 @@ class User(object):
                 return "Passwords do not match"
 
         return 'Registration Successful'
+
+    def login(self, email, password):
+
+        if email in self.users.keys():
+
+            if password == self.users[email][1]:
+
+                return 'Login Successful'
+            else:
+
+                return 'Password do not match'
+
+        return 'You have not signed up for an account'
