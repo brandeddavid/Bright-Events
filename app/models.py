@@ -30,7 +30,11 @@ class User(object):
 
     def login(self, email, password):
 
-        if email in self.users.keys():
+        if email == ' ' or password == ' ':
+
+            return 'Fields Required'
+
+        elif email in self.users.keys():
 
             if password == self.users[email][1]:
 
@@ -40,3 +44,54 @@ class User(object):
                 return 'Password do not match'
 
         return 'You have not signed up for an account'
+
+class Event(object):
+
+    """Event data model class"""
+
+    def __init__(self):
+
+        self.events = {}
+
+    def createEvent(self, id, name, category, location, date, time, description):
+
+        eventdetails = []
+
+        eventdetails.append(name)
+        eventdetails.append(category)
+        eventdetails.append(date)
+        eventdetails.append(time)
+        eventdetails.append(description)
+
+        self.events[id] = eventdetails
+
+        return 'Event added'
+
+    def deleteEvent(self, id):
+
+        if id in self.events.keys():
+
+            del(self.events[id])
+
+        return 'Event Deleted'
+
+    def updateEvent(self, id, name, category, location, date, time,description):
+
+        if id in self.events.keys():
+
+            self.events[id][0] = name
+            self.events[id][1] = category
+            self.events[id][2] = location
+            self.events[id][3] = date
+            self.events[id][4] = time
+            self.events[id][5] = description
+
+        return 'Update Successful'
+
+    def searchCategory(self, category):
+
+        pass
+
+    def searchLocation(self, location):
+
+        pass
