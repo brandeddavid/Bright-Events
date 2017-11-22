@@ -36,3 +36,27 @@ class Testloginuser(unittest.TestCase):
     def setUp(self):
 
         self.user = models.User()
+
+    def test_user_login_success(self):
+
+        self.user.createUser('dmwangi','dmwangi@gmail.com','dmwangi','dmwangi')
+
+        result = self.user.login('dmwangi@gmail.com','dmwangi')
+
+        self.assertEqual(result, 'Login Successful')
+
+    def test_user_password_mismatch(self):
+
+        self.user.createUser('dmwangi','dmwangi@gmail.com','dmwangi','dmwangi')
+
+        result = self.user.login('dmwangi@gmail.com','wrongpas')
+
+        self.assertEqual(result, 'Password do not match')
+
+    def test_user_not_signedup(self):
+
+        self.user.createUser('dmwangi','dmwangi@gmail.com','dmwangi','dmwangi')
+
+        result = self.user.login('dkinuthia@gmail.com','dunkin')
+
+        self.assertEqual(result, 'You have not signed up for an account')
