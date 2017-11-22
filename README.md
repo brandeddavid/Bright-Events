@@ -13,3 +13,6 @@ Bright events enables users to:
 [Project's Detail](https://docs.google.com/document/d/185NuVsJ-aflp3tlFksCFgVLLaMbCsdODOCr8Uw_5GSU/edit#)
 
 Visit Bright Event's [Page](https://brandeddavid.github.io/Bright-Events/UI/designs/index.html)
+
+
+[![Coverage Status](https://coveralls.io/repos/github/brandeddavid/Bright-Events/badge.svg?branch=master)](https://coveralls.io/github/brandeddavid/Bright-Events?branch=APIv1)
