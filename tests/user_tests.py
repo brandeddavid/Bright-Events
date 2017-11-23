@@ -17,7 +17,7 @@ class Testcreateuser(unittest.TestCase):
 
         """Test for successful user registration"""
 
-        result = self.user.createUser('dmwangi','dmwangi@gmail.com','dmwangi','dmwangi')
+        result = self.user.createUser('dmwangi','dmwangi@gmail.com','dmwangi')
 
         self.assertEqual(result, 'Registration Successful')
 
@@ -25,9 +25,9 @@ class Testcreateuser(unittest.TestCase):
 
         """Tests for already existing users"""
 
-        self.user.createUser('dmwangi','dmwangi@gmail.com','dmwangi','dmwangi')
+        self.user.createUser('dmwangi','dmwangi@gmail.com','dmwangi')
 
-        result = self.user.createUser('dmwangi','dmwangi@gmail.com','dmwangi','dmwangi')
+        result = self.user.createUser('dmwangi','dmwangi@gmail.com','dmwangi')
 
         self.assertEqual(result, 'Email already has an account')
 
@@ -35,7 +35,7 @@ class Testcreateuser(unittest.TestCase):
 
         """Tests for missmatched password"""
 
-        result = self.user.createUser('dmwangi','dmwangi@gmail.com','dmwangi','notme')
+        result = self.user.createUser('dmwangi','dmwangi@gmail.com','dmwangi')
 
         self.assertEqual(result, 'Passwords do not match')
 
@@ -43,7 +43,7 @@ class Testcreateuser(unittest.TestCase):
 
         """Tests for missing email address"""
 
-        result = self.user.createUser('dmwangi',' ','dmwangi','dmwangi')
+        result = self.user.createUser('dmwangi',' ','dmwangi')
 
         self.assertEqual(result, 'Fields Required')
 
@@ -61,7 +61,7 @@ class Testloginuser(unittest.TestCase):
 
         """Tests Successful  user login"""
 
-        self.user.createUser('dmwangi','dmwangi@gmail.com','dmwangi','dmwangi')
+        self.user.createUser('dmwangi','dmwangi@gmail.com','dmwangi')
 
         result = self.user.login('dmwangi@gmail.com','dmwangi')
 
@@ -71,7 +71,7 @@ class Testloginuser(unittest.TestCase):
 
         """Tests password mismatch during login"""
 
-        self.user.createUser('dmwangi','dmwangi@gmail.com','dmwangi','dmwangi')
+        self.user.createUser('dmwangi','dmwangi@gmail.com','dmwangi')
 
         result = self.user.login('dmwangi@gmail.com','wrongpas')
 
@@ -81,7 +81,7 @@ class Testloginuser(unittest.TestCase):
 
         """Tests for user not signed up"""
 
-        self.user.createUser('dmwangi','dmwangi@gmail.com','dmwangi','dmwangi')
+        self.user.createUser('dmwangi','dmwangi@gmail.com','dmwangi')
 
         result = self.user.login('dkinuthia@gmail.com','dunkin')
 

@@ -4,7 +4,7 @@ class User(object):
 
         self.users = {}
 
-    def createUser(self, name, email, password, confirmpassword):
+    def createUser(self, name, email, password):
 
         details = []
 
@@ -14,17 +14,11 @@ class User(object):
 
         else:
 
-            if password == confirmpassword:
+            details.append(name)
+            details.append(password)
 
-                details.append(name)
-                details.append(password)
-                details.append(confirmpassword)
+            self.users[email] = details
 
-                self.users[email] = details
-
-            else:
-
-                return "Passwords do not match"
 
         return 'Registration Successful'
 
@@ -44,10 +38,8 @@ class User(object):
                 return 'Password do not match'
 
         return 'You have not signed up for an account'
-
+"""
 class Event(object):
-
-    """Event data model class"""
 
     def __init__(self):
 
@@ -95,3 +87,4 @@ class Event(object):
     def searchLocation(self, location):
 
         pass
+"""
