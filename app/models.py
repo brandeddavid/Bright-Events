@@ -91,4 +91,8 @@ class Event(object):
 
     def searchLocation(self, location):
 
-        pass
+        for id in self.events.keys():
+
+            if self.events[id][3] == location:
+
+                return self.events[id]
