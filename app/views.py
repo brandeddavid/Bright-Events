@@ -1,11 +1,40 @@
-from flask import render_template, flash, redirect, url_for, session, logging, request
+from flask import jsonify, render_template, flash, redirect, url_for, session, logging, request
 from app import app
 from . import models
 from wtforms import Form, StringField, TextAreaField, PasswordField, validators
 
 #user = models.User.createUser()
 user = models.User()
-data = {}
+repo = {}
+
+userlist = [{'userdetails':['d@gmail.com','David', 'password123']}]
+
+
+#API END-POINTS
+@app.route('/api/users', methods=['GET'])
+def allUsers():
+
+    return jsonify({'users':userlist})
+
+@app.route('/api/users', methods=['POST'])
+def registeruser():
+
+    user = {'userdetails':[request.json['userdetails']]}
+
+    userlist.append(user)
+
+    return jsonify({'users':userlist})
+
+@app.route('/api/users', methods=['POST'])
+def logoutuser():
+
+    pass
+
+@app.route('/api/users', methods=['POST'])
+def resetpassword():
+
+    pass
+
 
 class RegisterForm(Form):
 
@@ -30,7 +59,11 @@ def index():
 
         data = user.createUser(name, email, password)
 
-        flash("You have signed up and can now login", 'success')
+        repo.update(data)
+
+        #"You have signed up and can now login"
+
+        flash(repo[email][1], 'success')
 
         return redirect(url_for('login'))
 
@@ -46,19 +79,15 @@ def about():
 
 def login():
 
-
-
-    if request.method == 'POST':
+    if request.method == 'POST' and form.validate():
 
         email = request.form['email']
 
         password = request.form['password']
 
-        data = user.login(email, password)
+        if email in repo.keys():
 
-        if email in data.keys():
-
-            if data[email][1] == password_cand:
+            if repo[email][1] == password:
 
                 session['logged_in'] = True
 
