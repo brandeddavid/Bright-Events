@@ -27,11 +27,16 @@
 
 					<h1>Login<small></small></h1>
 
-					<label>Email</label>
-			        <input type="email" name="email" placeholder="Enter email"><br>
+					{% include 'includes/_messages.html' %}
+					<form action="" method="POST">
+
+							<label>Email</label>
+			        <input type="email" class="form-control" value={{request.form.email}}><br>
 			        <label>Password</label>
-			        <input type="password" placeholder="Enter password"><br>
-			        <button class='btn btn-success'><a href="/home">Login</a></button>
+			        <input type="password" class="form-control" value={{request.form.password}}><br>
+			        <button type="submit" class='btn btn-primary'>Login</button>
+
+					</form>
 				</div>
 				<div class="col-lg-4">
 

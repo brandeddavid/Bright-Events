@@ -4,6 +4,8 @@ from . import models
 from wtforms import Form, StringField, TextAreaField, PasswordField, validators
 
 #user = models.User.createUser()
+user = models.User()
+data = {}
 
 class RegisterForm(Form):
 
@@ -21,7 +23,16 @@ def index():
     form =RegisterForm(request.form)
 
     if request.method == 'POST' and form.validate():
-        pass
+        name = form.name.data
+        email = form.email.data
+        password = form.password.data
+        #confirmpassword = form.confirmpassword.data
+
+        data = user.createUser(name, email, password)
+
+        flash("You have signed up and can now login", 'success')
+
+        return redirect(url_for('login'))
 
     return render_template('index.html', form = form)
 
@@ -34,6 +45,39 @@ def about():
 @app.route('/login', methods = ['GET','POST'])
 
 def login():
+
+
+
+    if request.method == 'POST':
+
+        email = request.form['email']
+
+        password = request.form['password']
+
+        data = user.login(email, password)
+
+        if email in data.keys():
+
+            if data[email][1] == password_cand:
+
+                session['logged_in'] = True
+
+                session['email'] = email
+
+                flash('You are now logged in', 'success')
+
+                return redirect(url_for('home'))
+
+            else:
+
+                error = 'Invalid Login'
+
+                return render_template('login.html', error=error)
+        else:
+            error = 'User does not exist'
+
+            return render_template('login.html', error=error)
+
 
     return render_template('login.html')
 
@@ -54,3 +98,5 @@ def addEvent():
 def myEvents():
 
     return render_template('myEvents.html')
+
+app.secret_key = 'MumbleJumble123'

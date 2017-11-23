@@ -1,20 +1,20 @@
 body{
 
   margin-top: 5px !important;
-  background: url("../img/background.jpg") no-repeat center center fixed;
+  /*background: url("../img/background.jpg") no-repeat center center fixed;*/
   background-size: cover;
   min-height: 770px;
-  color: white;
+  /*color: white;*/
 
 
 }
 
-.bg-overlay{
+/*.bg-overlay{
 
   background:rgba(0,0,0, 0.7);
   min-height: 770px;
 
-}
+}*/
 
 .registration{
 
@@ -32,7 +32,7 @@ body{
 	margin-right: 200px !important;
 }
 input, textarea, select{
-  
+
   width: 100%;
   resize: vertical;
   padding: 12px;
