@@ -1,31 +1,10 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>My Events</title>
-	<link rel="stylesheet" type="text/css" href="../static/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="../static/style.css">
-</head>
-<body>
+{% extends 'basehome.html' %}
 
-	<nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <a class="navbar-brand brand" href="#"><strong>BRIGHT EVENT</strong></a>
-        </div>
+{% block title %} Bright Events | myEvents {% endblock %}
 
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="/home">Home</a></li>
-            <li><a href="/addEvent">Create Event</a></li>
-            <li><a href="/myEvents">My Events</a></li>
-            <li><a href="/">Sign Out</a></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-
+{% block body %}
 	<div class="container">
-		<table class="table table-striped">
+		<table class="table table-striped" style="color: black !important>
 			<tr>
 				<th>Event Name</th>
 				<th>RSVP</th>
@@ -60,4 +39,5 @@
 	</div>
 
 </body>
-</html>
+
+{% endblock %}
