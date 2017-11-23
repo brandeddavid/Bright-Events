@@ -10,7 +10,7 @@ class User(object):
 
         if email in self.users.keys():
 
-            return 'Email already has an account'
+            print('Email already has an account')
 
         else:
 
@@ -19,8 +19,9 @@ class User(object):
 
             self.users[email] = details
 
+            print ('Registration Successful')
 
-        return 'Registration Successful'
+        return self.users
 
     def login(self, email, password):
 
@@ -38,7 +39,7 @@ class User(object):
                 return 'Password do not match'
 
         return 'You have not signed up for an account'
-"""
+
 class Event(object):
 
     def __init__(self):
@@ -82,9 +83,12 @@ class Event(object):
 
     def searchCategory(self, category):
 
-        pass
+        for id in self.events.keys():
+
+            if self.events[id][2] == category:
+
+                return self.events[id]
 
     def searchLocation(self, location):
 
         pass
-"""
