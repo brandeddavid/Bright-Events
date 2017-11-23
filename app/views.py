@@ -1,11 +1,29 @@
-from flask import render_template
+from flask import render_template, flash, redirect, url_for, session, logging, request
 from app import app
+from . import models
+from wtforms import Form, StringField, TextAreaField, PasswordField, validators
 
-@app.route('/')
+#user = models.User.createUser()
+
+class RegisterForm(Form):
+
+ 	name = StringField('Name', [validators.Length(min=1,max=50)])
+ 	email = StringField('Émail', [validators.Length(min=6, max=50)])
+ 	password = PasswordField('Password', [
+ 			validators.DataRequired(),
+            validators.EqualTo('confirmpassword', message='Password do not match')])
+ 	confirmpassword = PasswordField('Confirm Password')
+
+@app.route('/', methods = ['GET', 'POST'])
 
 def index():
 
-    return render_template('index.html')
+    form =RegisterForm(request.form)
+
+    if request.method == 'POST' and form.validate():
+        pass
+
+    return render_template('index.html', form = form)
 
 @app.route('/about')
 
@@ -13,7 +31,7 @@ def about():
 
     return render_template('about.html')
 
-@app.route('/login')
+@app.route('/login', methods = ['GET','POST'])
 
 def login():
 
