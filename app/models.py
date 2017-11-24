@@ -25,7 +25,7 @@ class User(object):
 
     def login(self, email, password):
 
-        if email == ' ' or password == ' ':
+        if email == '' or password == '':
 
             return 'Fields Required'
 
