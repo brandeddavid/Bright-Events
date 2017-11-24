@@ -1,0 +1,44 @@
+{% extends 'basehome.html' %}
+
+{% block body %}
+	<div class="bg-overlay">
+
+		<div class="container">
+
+			<div class="row">
+				<div class="col-lg-4">
+
+				</div>
+				<div class="col-lg-4">
+
+					<h1>Event Details</h1>
+
+					<input type="text" name="name" placeholder="Event Name...">
+
+					<select name="category" placeholder="Category" style="color:black;">
+					    <option value="">Category 1</option>
+					    <option value="">Category 2</option>
+					    <option value="">Category 3</option>
+					    <option value="">Category 4</option>
+					</select>
+
+					<input type="text" name="location" placeholder="Event Location...">
+
+					<input type="date" name="date" Event Date placeholder="Event Date">
+
+					<input type="time" name="time" placeholder="Event Time...">
+
+				    <textarea name="description" placeholder="Add Event Description..." style="height:200px"></textarea>
+
+				    <button class="btn btn-lg btn-success">Add Event</button>
+				</div>
+				<div class="col-lg-4">
+
+				</div>
+			</div>
+
+		</div>
+	</div>
+{% endblock %}
+</body>
+</html>

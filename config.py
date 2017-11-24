@@ -1,0 +1,3 @@
+# CONFIG.PY
+
+DEBUG = True
